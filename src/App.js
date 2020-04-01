@@ -36,7 +36,7 @@ export default function App() {
   return (
     <div className="App">
       <header>
-       <strong><h1>Start Wars Game, What is the Planet?</h1></strong> 
+       <strong><h1>Star Wars Game</h1></strong> 
       </header>
 
       <form >
