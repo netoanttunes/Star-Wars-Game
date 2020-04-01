@@ -35,11 +35,8 @@ export default function App() {
  
   return (
     <div className="App">
-      <header>
-       <strong><h1>Star Wars Game</h1></strong> 
-      </header>
-
-      <form >
+     
+      <form>
         <ul>
            <li className="Planeta"><h1>{planet.name}</h1></li>
            <li><h2>Population: {planet.population}</h2></li>
