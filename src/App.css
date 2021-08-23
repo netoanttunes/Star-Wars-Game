@@ -13,6 +13,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.titulo{
+  margin-bottom: 20px;
+}
+
 .App {
   width: 100%;
   max-width: 1180px;
@@ -33,7 +37,7 @@ body {
 
 
 .App form {
-  border: 2px solid yellow;
+  border: 2px solid red;
   width: 400px;
   margin-left: 0px;
 
@@ -41,7 +45,8 @@ body {
 
 .Planeta {
   width: 100%;
-  border-bottom: 2px solid yellow;
+  border-bottom: 2px solid red;
+  color: yellow;
 }
 
 .App form ul {
@@ -56,7 +61,7 @@ body {
 .button{
   width: 200px;
   height: 60px;
-  background: #e02041;
+  background: red;
   border: 0;
   border-radius: 8px;
   color: #FFF;
