@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 import './App.css';
 
@@ -6,17 +6,18 @@ export default function App() {
   const [planet, setPlanet] = useState ([]);
   const [id, setId] = useState (1);
   const [films, setFilms] = useState ([])
-    
-  useEffect(() => {
-    async function fetchData() {
-      const response = await fetch(`https://swapi.dev/api/planets/${id}`);
+
+  const fetchPlanet = useCallback( async (id) => {
+    const response = await fetch(`https://swapi.dev/api/planets/${id}`);
       const data = await response.json();
       const { films } = data;
       setPlanet(data);
       setFilms(films);
-      }
-    fetchData();
-  }, [id]);
+  }, []);
+    
+  useEffect(() => {
+    fetchPlanet(id);
+  }, [id, fetchPlanet]);
 
   function handleNext(min, max){
      min = Math.ceil(min);
@@ -45,5 +46,3 @@ export default function App() {
     </div>
   );
 }
-
-
