@@ -3,16 +3,16 @@ import React, { useCallback, useEffect, useState } from "react";
 import './App.css';
 
 export default function App() {
-  const [planet, setPlanet] = useState ([]);
   const [id, setId] = useState (1);
-  const [films, setFilms] = useState ([])
+  const [planet, setPlanet] = useState ([]);  
+  const [films, setFilms] = useState (0)
 
   const fetchPlanet = useCallback( async (id) => {
     const response = await fetch(`https://swapi.dev/api/planets/${id}`);
       const data = await response.json();
       const { films } = data;
       setPlanet(data);
-      setFilms(films);
+      setFilms(films.length);
   }, []);
     
   useEffect(() => {
@@ -36,12 +36,12 @@ export default function App() {
            <li><h2>População: {planet.population}</h2></li>
            <li><h2>Clima: {planet.climate}</h2></li>
            <li><h2>Terreno: {planet.terrain}</h2></li>
-           <li><h2>Apareceu em {films.length} Filmes</h2></li>
+           <li><h2>Apareceu em {films} Filmes</h2></li>
                 
         </ul> 
        </form>
       
-       <button className="button" onClick={() => handleNext(1,62)}>Vai</button>
+       <button className="button" onClick={() => handleNext(1,60)}>Vai</button>
 
     </div>
   );
